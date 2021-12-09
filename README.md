@@ -1,8 +1,8 @@
-# Tareas (by Nicolás González) 
+# Simulador Interactivo de Hospital (by Nicolás González) 
 
 ## CoderHouse - JavaScript 
 - Camada 19990
 - Profesor Maximiliano Torreblanca 
 
 ## Descripción
-Repositorio para entrega de Tareas.
+Repositorio para la entrega del proyecto.
