@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Arcane Hospital Center</title>
 </head>
-<body>
+
+<body onload="cambioNombre()">
     
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -19,13 +20,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                <a class="nav-link" aria-current="page" href="../pages/principal.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Servicios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Planes</a>
+                <a class="nav-link" href="../pages/planes.html">Planes</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Promociones</a>
@@ -42,73 +43,11 @@
       <main>
 
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal">Planes</h1>
-            <p class="fs-5 text-muted">Te presentamos los planes actualmente vigentes.</p>
+            <h1 class="display-4 fw-normal" id="nombre">Hola!</h1>
+            <p class="fs-5 text-muted" id="descripcion">Bienvenido/a a la página oficial de Arcane Hospital Center</p>
         </div>
 
-
-        <div class="container">
-
-          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-            <div class="col">
-              <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                  <h4 class="my-0 fw-normal">Básico</h4>
-                </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title">$2000<small class="text-muted fw-light">/mes</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li>Cobertura en la capital</li>
-                    <li>Reservas online</li>
-                    <li>Llamadas gratis a medicos</li>
-                    <li>Médicos especializados</li>
-                  </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-primary">Contratar</button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                  <h4 class="my-0 fw-normal">Completo</h4>
-                </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title">$6000<small class="text-muted fw-light">/mes</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li>Cobertura en todo el país</li>
-                    <li>Reservas online</li>
-                    <li>Prioridad en llamadas</li>
-                    <li>Médicos especializados con bajo costo</li>
-                  </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-primary">Contratar</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Viajeros</h4>
-                  </div>
-                  <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$13000<small class="text-muted fw-light">/mes</small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                      <li>Cobertura mundial</li>
-                      <li>Reservas online</li>
-                      <li>Mayor prioridad en llamadas</li>
-                      <li>Médicos especializados gratis</li>
-                    </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Contratar</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-          
-        </div>
-       
-        
-      
-
+        <script src="../js/main.js"></script>
       </main>
 
       <footer>

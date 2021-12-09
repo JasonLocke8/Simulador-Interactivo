@@ -1,30 +1,63 @@
 //La idea es hacer un Login, con una pequeña tienda. Todo ambientado en un Hospital con diferentes planes médicos.
 
-function usuario(user, contrasena) {
-    this.user = user;
-    this.contrasena = contrasena;
-}
+    function usuariosNuevos(nombre, apellido, email, password, sexo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.password = password;
+        this.sexo = sexo;
+    };
 
-const usuario1 = new usuario ("nico","1234");
-const usuario2 = new usuario ("pablo","4321");
-const usuario3 = new usuario ("juan","1122");
+// Al presionar la tecla 'Enter' valida el formulario de login
 
-function login(){  
+    window.addEventListener("keypress", function(e){
 
-    var user = document.getElementById("exampleInputEmail1").value;
-    var contrasena = document.getElementById("exampleInputPassword1").value;
-
-
-    if (user==usuario1.user && contrasena==usuario1.contrasena) { 
-        window.location="pages/principal.html"; 
-    } 
-    if (user==usuario2.user && contrasena==usuario2.contrasena) { 
-        window.location="pages/principal.html"; 
-    } 
-    if (user==usuario3.user && contrasena==usuario3.contrasena) { 
-        window.location="pages/principal.html";
-    } 
-    if (user=="" && contrasena=="") { 
-        alert("Ingrese los datos!");
-    } 
+        if ( e.key == "Enter"){
+            login();
+        }
     }
+    )
+
+// Función que registra los datos de una persona en un string para posteriormente guardarlo como JSON
+    function registro(){
+
+        let nombre = document.getElementById("inputNombre").value;
+        let apellido = document.getElementById("inputApellido").value;
+        let email = document.getElementById("inputEmail").value;
+        let password = document.getElementById("inputPassword").value;
+        let sexo = document.getElementById("inputSexo").value;
+
+        const usuarioNuevo = new usuariosNuevos (nombre, apellido, email, password, sexo);
+
+        let usuarioJSON = JSON.stringify(usuarioNuevo);
+
+        localStorage.setItem("usuarioNuevo", usuarioJSON);
+
+    }
+
+// Función que valida el Login
+    function login(){
+
+        let json = localStorage.usuarioNuevo;
+        let usuarioString = JSON.parse(json);
+
+        let user = document.getElementById("email_address").value;
+        let contrasena = document.getElementById("password").value;
+
+        if (user == usuarioString.email && contrasena == usuarioString.password){
+            localStorage.setItem("usuarioActual", usuarioString.nombre);
+            window.location="pages/principal.html";
+        }
+    }
+
+// Función que cambia el titulo de bienvenida con el nombre del usuario
+
+    function cambioNombre(){
+
+        let userActual = localStorage.getItem("usuarioActual");
+        document.getElementById("nombre").innerHTML = "Hola, "+userActual+"!";
+        
+    }
+
+    
+
